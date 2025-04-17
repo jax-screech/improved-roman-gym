@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>The Roman Gym|Contact</title>
+</head>
+<body class="flex flex-col min-h-screen">
+    <nav class="bg-black text-red-500 p-4 flex items-center justify-between fixed-top ">
+        <!-- Logo + Title -->
+        <div class="flex items-center space-x-2">
+          <a href="https://google.com">
+            <img src="assets/Gym logo.jpeg" alt="Gym logo" class="rounded-full h-10 w-10 object-cover" />
+          </a>
+          <h3 class="underline font-bold">The Roman Gym</h3>
+        </div>
+      
+        <!-- Nav Links -->
+        <ul class="hidden md:flex space-x-6">
+          <li><a href="index.html" class="hover:text-white hover:underline ">HOME</a></li>
+          <li><a href="about.html" class="hover:text-white hover:underline ">ABOUT US</a></li>
+          <li><a href="class.html" class="hover:text-white hover:underline ">OUR CLASS</a></li>
+          <li><a href="contact.html" class="hover:text-white hover:underline ">CONTACT US</a></li>
+        </ul>
+      
+       <!-- Responsive Hamburger Menu -->
+    <div class="md:hidden">
+        <button id="mobileMenuBtn" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        </button>
+        <ul id="mobileMenu" class="hidden flex-col space-y-4 mt-4 bg-black text-red-500 p-4">
+          <li><a href="index.html" class="hover:text-white hover:underline">HOME</a></li>
+          <li><a href="about.html" class="hover:text-white hover:underline">ABOUT US</a></li>
+          <li><a href="class.html" class="hover:text-white hover:underline">OUR CLASS</a></li>
+          <li><a href="contact.html" class="hover:text-white hover:underline">CONTACT US</a></li>
+        </ul>
+      </div>
+      </nav>
+
+            <!-- Contact Info -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
+            <p class="mb-2">We'd love to hear from you! Whether you have questions about memberships, classes, or personal training — we're here to help.</p>
+      </div>
+  
+      <!-- Location -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 class="text-xl font-bold mb-2">Our Location</h3>
+        <p>Our Headquarters</p>
+        <p>Along Thika Road Highway</p>
+        <p class="text-sm text-gray-500">*Next to Garden City Mall*</p>
+        <img src="assets/map.jpg" alt="map">
+      </div>
+  
+      <!-- Contact Methods -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+           <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl mb-2 font-bold underline"> Call Us</h>
+              <p class="mb-1 text-lg">Phone: <strong>+254740187791</strong></p>
+              <p>Reception Hours: Mon - Fri: 6am - 10pm</p>
+              <p>Sat - Sun: 7am - 8pm</p>
+           </div>
+  
+            <div class="bg-white p-2 rounded-lg shadow-md">
+              <h2 class="text-xl font-semibold mb-2">Email Us</h2>
+              <p>Email: <a href="mailto:jeromepaddy7@gmail.com" class="text-red-500">TheRomanGym@gmail.com</a></p>
+
+            </div>
+      </div>
+
+    <form action="/submit" method="POST" class="bg-blue-200 m-3 flex justify-center items-center">
+      <div class="p-6 w-full max-w-md">
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" class="bg-white mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name" required>
+        </div>
+        <div class="mb-4">
+            <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+            <input type="tel" id="phone" name="phone" class="bg-white mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Your Phone Number" required>
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" class="bg-white mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Your Email" required>
+        </div>
+        <div class="mb-4">
+            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="4" class="bg-white mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full" onclick="onSubmit()">Submit</button>
+      </div>
+    </form>
+  
+      <!-- Opening Hours -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-xl font-semibold mb-4">Opening Hours</h2>
+        <table class="w-full text-left">
+          <thead>
+            <tr class="text-gray-600">
+              <th class="pb-2">Day</th>
+              <th class="pb-2">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td><td>6:00 AM - 10:00 PM</td></tr>
+            <tr><td>Tuesday</td><td>6:00 AM - 10:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>6:00 AM - 10:00 PM</td></tr>
+            <tr><td>Thursday</td><td>6:00 AM - 10:00 PM</td></tr>
+            <tr><td>Friday</td><td>6:00 AM - 10:00 PM</td></tr>
+            <tr><td>Saturday</td><td>7:00 AM - 8:00 PM</td></tr>
+            <tr><td>Sunday</td><td>7:00 AM - 8:00 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+        <!-- Footer -->
+        <footer class="bg-black text-center text-gray-500 py-4 text-sm mt-auto">
+            &copy; 2025 Roman Gym. All rights reserved.
+        </footer>
+        <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
