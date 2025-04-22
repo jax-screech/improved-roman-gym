@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+  integrity="sha512-..." 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" />
+  <title>The-Roman-Gym | Classes</title>
+</head>
+<body class="font-sans bg-white">
+
+  <!-- Navbar -->
+  <nav class="bg-black text-red-500 p-4 flex items-center justify-between fixed top-0 z-50 w-full">
+    <div class="flex items-center space-x-2">
+      <a href="https://google.com">
+        <img src="images/gym logo.png" alt="logo" class="rounded-full h-10 w-10 object-cover" />
+      </a>
+      <h3 class="underline font-bold mr-2">The Roman Gym</h3>
+    </div>
+
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="index.html" class="hover:text-white hover:underline">HOME</a></li>
+      <li><a href="class.html" class="hover:text-white hover:underline">OUR CLASS</a></li>
+      <li><a href="about.html" class="hover:text-white hover:underline">ABOUT US</a></li>
+      <li><a href="contact.html" class="hover:text-white hover:underline">CONTACT US</a></li>
+    </ul>
+
+    <div class="md:hidden">
+      <button id="mobileMenuBtn" class="focus:outline-none">
+        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <ul id="mobileMenu" class="hidden flex-col space-y-4 mt-20 bg-black text-red-500 p-4 md:hidden transition-all duration-300 ease-in-out">
+    <li><a href="index.html" class="hover:text-white hover:underline">HOME</a></li>
+        <li><a href="about.html" class="hover:text-white hover:underline">ABOUT US</a></li>
+        <li><a href="class.html" class="hover:text-white hover:underline">OUR CLASS</a></li>
+        <li><a href="contact.html" class="hover:text-white hover:underline">CONTACT US</a></li>
+  </ul>
+
+  <div class="relative w-full h-screen overflow-hidden">
+    <div class="absolute inset-0 w-full h-full">
+    <img src="images/Yoga Space NYC — Classes.jpeg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+    <img src="images/Yoga Poses for Your Body and Mind.jpeg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+    <img src="images/football pitch.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+    <img src="images/football pitch.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+    </div>
+  </div>
+
+
+  <!-- Hero Section -->
+  <section class="bg-gray-800 py-20 text-center">
+    <h2 class="text-lg md:text-5xl font-bold text-yellow-400">Our Classes</h2>
+    <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">Train like a true Roman with our wide range of high-energy fitness classes for all levels.</p>
+  </section>
+
+  <!-- Classes Section -->
+  <section class="max-w-6xl mx-auto px-4 py-16 grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    
+    <!-- Class Card -->
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform">
+      <h3 class="text-2xl font-bold text-yellow-400 mb-2">Gladiator Strength</h3>
+      <p class="text-gray-300 mb-3">High-intensity weightlifting and power moves to build serious strength.</p>
+      <p class="text-sm text-gray-400">Mon, Wed, Fri - 6:00 AM & 6:00 PM</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform">
+      <h3 class="text-2xl font-bold text-yellow-400 mb-2">Spartan HIIT</h3>
+      <p class="text-gray-300 mb-3">Explosive fat-burning workouts designed to increase endurance fast.</p>
+      <p class="text-sm text-gray-400">Tue & Thu - 7:00 AM & 5:30 PM</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform">
+      <h3 class="text-2xl font-bold text-yellow-400 mb-2">Centurion Core</h3>
+      <p class="text-gray-300 mb-3">Core-focused class that targets your abs, stability, and posture.</p>
+      <p class="text-sm text-gray-400">Daily - 12:00 PM</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform">
+      <h3 class="text-2xl font-bold text-yellow-400 mb-2">Yoga for Warriors</h3>
+      <p class="text-gray-300 mb-3">Flexibility and focus meets strength and recovery in this relaxing flow.</p>
+      <p class="text-sm text-gray-400">Mon, Wed, Fri - 8:00 PM</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform">
+      <h3 class="text-2xl font-bold text-yellow-400 mb-2">Beginner Bootcamp</h3>
+      <p class="text-gray-300 mb-3">Perfect start for new warriors. Learn the basics and get in shape.</p>
+      <p class="text-sm text-gray-400">Sat & Sun - 9:00 AM</p>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center text-gray-500 py-4 text-lg flex px-5 ">
+    <div>
+      &copy; 2025 Roman Gym. All rights reserved.
+    </div>
+    <div class="ml-100">
+      <p>WORKOUT LIKE THE ROMANS,BE A LEGEND</p>
+    </div>
+    <div class="ml-100">
+      <h3 class="underline">Follow Us:</h3>
+      <ul class="flex text-white space-x-2">
+        <li><i class="fa-brands fa-facebook"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-twitter"></i></li>
+        <li><i class="fa-brands fa-tiktok"></i></li>
+      </ul>
+      <ul class="flex text-white space-x-2 ">
+        <li><i class="fa-brands fa-snapchat"></i></li>
+        <li><i class="fa-brands fa-linkedin"></i></li>
+        <li><i class="fa-brands fa-telegram"></i></li>
+        <li><i class="fa-brands fa-whatsapp"></i></li>
+      </ul>
+    </div>
+  </footer>
+ <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -23,8 +23,8 @@
     <!-- Nav Links -->
     <ul class="hidden md:flex space-x-6">
       <li><a href="index.html" class="hover:text-white hover:underline ">HOME</a></li>
-      <li><a href="about.html" class="hover:text-white hover:underline ">ABOUT US</a></li>
       <li><a href="class.html" class="hover:text-white hover:underline ">OUR CLASS</a></li>
+      <li><a href="about.html" class="hover:text-white hover:underline ">ABOUT US</a></li>
       <li><a href="contact.html" class="hover:text-white hover:underline ">CONTACT US</a></li>
     </ul>
   
@@ -47,20 +47,23 @@
   </nav>
     <!-- Hero Section -->
 
-    <div class="mt-2 flex space-x-2 justify-center p-5">
-      <img src="images/gym hom.jpg" alt="Home" class="h-100 w-100 rounded-lg mt-3">
-      <img src="images/gym home 1.jpg" alt="Home" class="h-100 w-100 rounded-lg mt-3">
-      <img src="images/gym home 3.jpg" alt="Home" class="h-100 w-100 rounded-lg mt-3">
+    <div class="relative w-full h-screen overflow-hidden">
+      <div class="absolute inset-0 w-full h-full">
+      <img src="images/gym hom.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+      <img src="images/gym home 1.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+      <img src="images/gym home 3.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+      </div>
     </div>
+
     <div class="bg-white">
   <section class="text-center py-12 px-4">
     <h2 class="text-3xl md:text-5xl font-bold mb-4 text-red-400 underline">Welcome to The Roman Gym</h2>
     <p class="text-lg max-w-2xl mx-auto text-black">Where Strength Meets Determination. Whether you're just starting out or you're an athlete ready to level up, Roman Gym is your ultimate fitness destination.</p>
   </section>
-</div>
+  </div>
   
     <!-- What We Offer -->
-    <section class="py-12 px-6 bg-red-50 m-5 rounded-lg ">
+    <section class="py-12 px-6 bg-red-30 m-5 rounded-lg ">
       <h3 class="text-2xl font-bold text-center text-red-400 mb-6">What We Offer</h3>
       <div class="text-black ml-110 flex space-x-3">
         <ul>

@@ -11,7 +11,7 @@
     <title>The Roman Gym|about</title>
 </head>
 <body>
-    <nav class="bg-black text-red-500 p-4 flex items-center justify-between fixed-top w-full fixed top-0">
+    <nav class="bg-black text-red-500 p-4 flex items-center justify-between fixed top-0 z-50 w-full "">
         <!-- Logo + Title -->
         <div class="flex items-center space-x-2">
           <a href="https://google.com">
@@ -38,22 +38,44 @@
           </button>
           <ul id="mobileMenu" class="hidden flex-col space-y-4 mt-4 bg-black text-red-500 p-4">
             <li><a href="index.html" class="hover:text-white hover:underline">HOME</a></li>
+            <li><a href="class.html" class="hover:text-white hover:underline ">OUR CLASS</a></li>
             <li><a href="about.html" class="hover:text-white hover:underline">ABOUT US</a></li>
-            <li><a href="class.html" class="hover:text-white hover:underline">OUR CLASS</a></li>
             <li><a href="contact.html" class="hover:text-white hover:underline">CONTACT US</a></li>
           </ul>
         </div>
       </nav>
-      <div class="max-w-5xl mx-auto px-6 py-12">
 
-        <div class="mt-2 flex space-x-2 justify-center p-5">
-          <img src="images/about.gym.jpg" alt="About" class="h-60 w-100 rounded-lg  mt-3 ">
-          <img src="images/toournament.webp" alt="About" class="h-60 w-100 rounded-lg  mt-3 ">
-          <img src="images/football pitch.jpg" alt="About" class="h-60 w-100 rounded-lg  mt-3 ">
-          <img src="images/soccer pitch.jpg" alt="About" class="h-60 w-100 rounded-lg  mt-3 ">
+      <!-- Testimonials Section -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-6">What Our Members Say</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Testimonial 1 -->
+            <div class="bg-white shadow-md p-6 rounded-lg">
+                <img src="images/harunn.jpg" alt="Harun" class="h-20 w-20 object-cover rounded-full ml-15">
+                <p class="text-lg italic">"Joining Roman Gym was the best decision I've ever made. The trainers are amazing, and the community is so supportive!"</p>
+                <h3 class="mt-4 font-bold text-red-600">- Kamau H.</h3>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="bg-white shadow-md p-6 rounded-lg">
+                <img src="images/shirlyn.jpg" alt="sarah" class="h-20 w-20 object-cover rounded-full ml-15">
+                <p class="text-lg italic">"The equipment is top-notch, and the group classes are so much fun. I've never felt more motivated to work out."</p>
+                <h3 class="mt-4 font-bold text-red-600">- Shirlyn W.</h3>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="bg-white shadow-md p-6 rounded-lg">
+                <img src="images/bruce.jpg" alt="Emilys" class="h-20 w-20 object-cover rounded-full ml-15">
+                <p class="text-lg italic">"Roman Gym has completely transformed my fitness journey. I feel stronger, healthier, and more confident than ever."</p>
+                <h3 class="mt-4 font-bold text-red-600">- Bruce I.</h3>
+            </div>
         </div>
+        <a href="https://twitter.com">
+          <button class="ml-130 mt-2 box shadow-2 text-black border-1 border-red-500 rounded-lg px-10 bg-white hover:bg-gray-200">Learn More</button>
+        </a>
+    </section>
 
-        <h1 class="text-4xl font-bold text-red-600 mb-6 border-b-4 border-red-500 inline-block pb-2">
+      </div>
+      <div class="bg-red-200 m-5">
+        <h1 class="text-4xl font-bold text-red-600 mb-6 border-b-4 border-red-500 inline-block pb-2 mx-100">
           About The Roman Gym
         </h1>
     
@@ -73,41 +95,15 @@
         <section class="mb-10">
           <h2 class="text-xl font-bold mb-2"> Why Choose Us?</h2>
           <ul class="list-disc list-inside text-lg space-y-2">
-            <li>State-of-the-art equipment for strength, cardio, and flexibility</li>
-            <li>Certified personal trainers with a passion for progress</li>
-            <li>Inclusive, supportive, and motivating environment</li>
-            <li>Flexible workout plans & diverse group classes</li>
-            <li>Real results with accountability and community support</li>
+            <li>We have state-of-the-art equipment for strength, cardio, and flexibility</li>
+            <li>We have certified personal trainers with a passion for progress</li>
+            <li>We offer an inclusive, supportive, and motivating environment</li>
+            <li>We have a flexible workout plans & diverse group classes</li>
+            <li>Garanteed real results with accountability and community support</li>
           </ul>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="mb-10">
-            <h2 class="text-xl font-bold mb-6">What Our Members Say</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Testimonial 1 -->
-                <div class="bg-white shadow-md p-6 rounded-lg">
-                    <img src="assets/harun.jpg" alt="Harun" class="h-20 w-20 object-cover rounded-full ml-15">
-                    <p class="text-lg italic">"Joining Roman Gym was the best decision I've ever made. The trainers are amazing, and the community is so supportive!"</p>
-                    <h3 class="mt-4 font-bold text-red-600">- Kamau H.</h3>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="bg-white shadow-md p-6 rounded-lg">
-                    <img src="assets/sarah.jpg" alt="sarah" class="h-20 w-20 object-cover rounded-full ml-15">
-                    <p class="text-lg italic">"The equipment is top-notch, and the group classes are so much fun. I've never felt more motivated to work out."</p>
-                    <h3 class="mt-4 font-bold text-red-600">- James K.</h3>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="bg-white shadow-md p-6 rounded-lg">
-                    <img src="assets/" alt="Emilys" class="h-20 w-20 object-cover rounded-full ml-15">
-                    <p class="text-lg italic">"Roman Gym has completely transformed my fitness journey. I feel stronger, healthier, and more confident than ever."</p>
-                    <h3 class="mt-4 font-bold text-red-600">- Emily R.</h3>
-                </div>
-            </div>
-            <a href="https://twitter.com">
-              <button class="ml-100 mt-2 box shadow-2 text-black border-1 border-red-500 rounded-lg px-10 bg-white hover:bg-gray-200">Learn More</button>
-            </a>
-        </section>
+        
     
         <section class="mb-10">
           <h2 class="text-xl font-bold mb-2"> Our Philosophy</h2>
@@ -118,6 +114,7 @@
           <h2 class="text-xl font-bold mb-2"> Join the Family</h2>
           <p class="text-lg">We're proud to be a gym where goals are crushed, friendships are made, and lives are transformed. Whether you're just starting your fitness journey or leveling up, Roman Gym is here to support you every step of the way.</p>
         </section>
+        </div>
         
     <!-- Footer -->
     <footer class="bg-black text-center text-gray-500 py-4 text-lg flex px-5 ">
