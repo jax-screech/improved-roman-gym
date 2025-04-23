@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Sign Up | The Roman Gym</title>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white max-w-md w-full p-8 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold text-center text-red-500 mb-6">Create Your Account</h2>
+
+    <form onsubmit="handleSignup(event)" class="space-y-5">
+
+      <!-- Name -->
+      <div>
+        <label for="name" class="block font-semibold mb-1">Name</label>
+        <div class="flex items-center border rounded-lg px-3 py-2 bg-white">
+          <i class="fa-solid fa-user text-gray-400 mr-2"></i>
+          <input type="text" id="name" name="name" placeholder="Full name" class="w-full outline-none" required>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block font-semibold mb-1">Email</label>
+        <div class="flex items-center border rounded-lg px-3 py-2 bg-white">
+          <i class="fa-solid fa-envelope text-gray-400 mr-2"></i>
+          <input type="email" id="email" name="email" placeholder="you@example.com" class="w-full outline-none" required>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block font-semibold mb-1">Password</label>
+        <div class="flex items-center border rounded-lg px-3 py-2 bg-white">
+          <i class="fa-solid fa-lock text-gray-400 mr-2"></i>
+          <input type="password" id="password" name="password" placeholder="Create a password" class="w-full outline-none" required>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-md font-semibold transition duration-300">
+        Sign Up
+      </button>
+    </form>
+
+    <p class="text-center text-gray-600 mt-4">
+      Already have an account?
+      <a href="signin.html" class="text-blue-600 font-semibold hover:underline">Log In</a>
+    </p>
+  </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <script>
+        function handleSignup(event) {
+          event.preventDefault();
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+    
+          // Simulate success (you can replace this with real logic/API later)
+          if (name && email && password) {
+            alert(`Welcome to Roman Gym, ${name}! Your account has been created.`);
+            window.location.href = "signin.html";
+          } else {
+            alert("Please fill in all fields.");
+          }
+    
+          console.log('Name:', name);
+          console.log('Email:', email);
+          console.log('Password:', password);
+        }
+      </script>
+    
+    </body>
+    </html>
+    

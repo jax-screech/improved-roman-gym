@@ -1,112 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-  <title>The-Roman-Gym|Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>The-Roman-Gym | Home</title>
 </head>
 <body>
-  <nav class="bg-black text-red-500 p-4 flex items-center justify-between fixed top-0 z-50 w-full ">
-    <!-- Logo + Title -->
+    <!-- Navbar -->
+  <nav class="bg-black text-red-500 p-4 flex justify-between items-center fixed w-full z-50">
     <div class="flex items-center space-x-2">
-      <a href="https://google.com">
-        <img src="images/gym logo.png" alt="logo" class="rounded-full h-10 w-10 object-cover">
-      </a>
-      <h3 class="underline font-bold mr-2S">The Roman Gym</h3>
+      <img src="images/gym logo.png" alt="Logo" class="w-10 h-10 rounded-full" />
+      <h1 class="text-xl font-bold">The Roman Gym</h1>
     </div>
-  
-    <!-- Nav Links -->
     <ul class="hidden md:flex space-x-6">
-      <li><a href="index.html" class="hover:text-white hover:underline ">HOME</a></li>
-      <li><a href="class.html" class="hover:text-white hover:underline ">OUR CLASS</a></li>
-      <li><a href="about.html" class="hover:text-white hover:underline ">ABOUT US</a></li>
-      <li><a href="contact.html" class="hover:text-white hover:underline ">CONTACT US</a></li>
-      <li><a href="signin.html" class="hover:text-white hover:underline ">LOGIN</a></li>
+      <li><a href="index.html" class="hover:text-white">Home</a></li>
+      <li><a href="about.html" class="hover:text-white">About</a></li>
+      <li><a href="class.html" class="hover:text-white">Classes</a></li>
+      <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+    <li class="relative group">
+      <button class="rounded-full h-8 w-8 border-2 border-yellow-900"><i class="fa-solid fa-user text-white"></i></button>
+    <ul class="absolute hidden group-hover:block bg-black text-red-500 mt-2 py-2 w-40 rounded shadow-lg z-10 right-0 top-0">
+      <li><a href="signin.html" class="block px-4 py-2 hover:bg-red-500 hover:text-white">Login</a></li>
+      <li><a href="signup.html" class="block px-4 py-2 hover:bg-red-500 hover:text-white">Signup</a></li>
     </ul>
-  
-    <!-- Responsive Hamburger Menu -->
-    <div class="md:hidden">
-      <button id="mobileMenuBtn" class="focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      </button>
-      <ul id="mobileMenu" class="hidden flex-col space-y-4 mt-4 bg-black text-red-500 p-4">
-        <li><a href="index.html" class="hover:text-white hover:underline">HOME</a></li>
-        <li><a href="about.html" class="hover:text-white hover:underline">ABOUT US</a></li>
-        <li><a href="class.html" class="hover:text-white hover:underline">OUR CLASS</a></li>
-        <li><a href="contact.html" class="hover:text-white hover:underline">CONTACT US</a></li>
-      </ul>
-    </div>
-
+    </li>
+    </ul>
+    <button class="md:hidden text-white" id="mobileMenuBtn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </nav>
-    <!-- Hero Section -->
 
-    <div class="relative w-full h-screen overflow-hidden">
-      <div class="absolute inset-0 w-full h-full">
-      <img src="images/gym hom.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-      <img src="images/gym home 1.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-      <img src="images/gym home 3.jpg" alt="Home" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+  <!-- Hero Section -->
+<section class="h-screen bg-cover bg-center relative bg-animation"> 
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4">
+        <h2 class="text-5xl font-bold mb-4">Train Like a Roman</h2>
+        <p class="text-xl mb-6">Strength. Power. Legacy. Join our elite community.</p>
+        <a href="signup.html" class="bg-red-500 px-6 py-3 rounded-full hover:bg-white hover:text-red-500 transition font-semibold">Get Started</a>
+    </div>
+</section>
+
+<style>
+    @keyframes backgroundChange {
+        0% {
+            background-image: url('images/gym hom.jpg');
+        }
+        50% {
+            background-image: url('images/gym home 3.jpg');
+        }
+        100% {
+            background-image: url('images/gym home 1.jpg');
+        }
+    }
+
+    .bg-animation {
+        animation: backgroundChange 10s infinite;
+    }
+</style>
+
+  <!-- Features Section -->
+  <section class="py-16 px-6 md:px-20 text-center bg-white">
+    <h2 class="text-4xl font-bold text-red-500 mb-10">Why Choose The Roman Gym?</h2>
+    <div class="flex gap-10 space-x-2 bg-gray-100 p-6 rounded-lg">
+        <div>
+            <i class="fa-solid fa-users text-4xl text-red-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Community Driven</h3>
+            <p>Join a family of fitness enthusiasts who motivate and support each other.</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-dumbbell text-4xl text-red-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">State-of-the-Art Equipment</h3>
+          <p>From weights to advanced machines, we offer top-tier gear for every workout style.</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-basketball-ball text-4xl text-red-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Sports field</h3>
+            <p>We have a sports field to  train for sports.</p>
+        </div>
+    </div>
+    <div class="flex gap-10 space-x-2 bg-gray-100 p-6 rounded-lg">
+      <div>
+        <i class="fa-solid fa-clock text-4xl text-red-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Flexible Hours</h3>
+        <p>Open 24/7 to fit your busy schedule. Train when it suits you best.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-user-ninja text-4xl text-red-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Elite Trainers</h3>
+        <p>Train with certified professionals who push you to reach your full potential.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-heart-pulse text-4xl text-red-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Holistic Wellness</h3>
+        <p>Our programs support strength, endurance, nutrition, and mental health.</p>
       </div>
     </div>
-
-    <div class="bg-white">
-  <section class="text-center py-12 px-4">
-    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-red-400 underline">Welcome to The Roman Gym</h2>
-    <p class="text-lg max-w-2xl mx-auto text-black">Where Strength Meets Determination. Whether you're just starting out or you're an athlete ready to level up, Roman Gym is your ultimate fitness destination.</p>
   </section>
-  </div>
-  
-    <!-- What We Offer -->
-    <section class="py-12 px-6 bg-red-30 m-5 rounded-lg ">
-      <h3 class="text-2xl font-bold text-center text-red-400 mb-6">What We Offer</h3>
-      <div class="text-black ml-110 flex space-x-3">
-        <ul>
-          <li> Modern Equipment</li>
-          <li> Expert Trainers</li>
-          <li> Group Classes</li>
-        </ul>
-        <ul>
-          <li> Personal Training</li>
-          <li> Nutrition Guidance</li>
-          <li> Flexible Hours</li>
-        </ul>
-      </div>
-    </section>
-  
-    <!-- Join CTA -->
-    <section class="text-center py-10 bg-gray-200 m-2 rounded-lg">
-      <h3 class="text-lg font-semibold text-red-500 mb-4">Ready to Get Started?</h3>
-      <p class="mb-6 text-gray-900">Join our fitness community today and take the first step toward your strongest self.</p>
-      <a href="contact.html" class="bg-red-500 hover:bg-white hover:text-red-500 text-white py-2 px-6 rounded-lg transition duration-300">Join Now</a>
-    </section>
-  
-    <!-- Footer -->
-    <footer class="bg-black text-center text-gray-500 py-4 text-lg flex px-5 ">
-      <div>
-        &copy; 2025 Roman Gym. All rights reserved.
-      </div>
-      <div class="ml-100">
-        <p>WORKOUT LIKE THE ROMANS,BE A LEGEND</p>
-      </div>
-      <div class="ml-100">
-        <h3 class="underline">Follow Us:</h3>
-        <ul class="flex text-white space-x-2">
-          <li><i class="fa-brands fa-facebook"></i></li>
-          <li><i class="fa-brands fa-instagram"></i></li>
-          <li><i class="fa-brands fa-twitter"></i></li>
-          <li><i class="fa-brands fa-tiktok"></i></li>
-        </ul>
-        <ul class="flex text-white space-x-2 ">
-          <li><i class="fa-brands fa-snapchat"></i></li>
-          <li><i class="fa-brands fa-linkedin"></i></li>
-          <li><i class="fa-brands fa-telegram"></i></li>
-          <li><i class="fa-brands fa-whatsapp"></i></li>
-        </ul>
-      </div>
-    </footer>
+
+  <!-- Call To Action -->
+  <section class="bg-red-50 text-black   py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Start Your Transformation Today</h2>
+    <p class="mb-6">Join hundreds of members who have discovered their strongest self at The Roman Gym.</p>
+    <a href="join.html" class="bg-white text-black border-2 border-black px-8 py-3 rounded-full font-semibold hover:bg-black hover:text-red-500 transition">Learn More</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 text-center flex">
+    <div class="flex items-center space-x-2 mb-4 mr-60">
+      <img src="images/gym logo.png" alt="Logo" class="w-10 h-10 rounded-full" />
+      <h1 class="text-xl font-bold">The Roman Gym</h1>
+    </div>
+    <div class="flex flex-col items-center ml-40">
+      <p>&copy; 2025 The Roman Gym. All rights reserved.</p>
+    </div>
+    <div class="flex justify-center space-x-4 mt-2 ml-80">
+      <i class="fa-brands fa-facebook hover:text-red-500"></i>
+      <i class="fa-brands fa-instagram hover:text-red-500"></i>
+      <i class="fa-brands fa-twitter hover:text-red-500"></i>
+      <i class="fa-brands fa-tiktok hover:text-red-500"></i>
+    </div>
+  </footer>
+
   <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
