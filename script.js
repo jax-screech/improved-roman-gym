@@ -8,31 +8,15 @@ if (mobileMenuBtn) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const muscleFilter = document.getElementById("muscleFilter");
-  const intensityFilter = document.getElementById("intensityFilter");
-
-  function updateExercises() {
-    const muscle = muscleFilter.value;
-    const intensity = intensityFilter.value;
-    fetchExercises(muscle, intensity);
-  }
-
-  muscleFilter.addEventListener("change", updateExercises);
-  intensityFilter.addEventListener("change", updateExercises);
-
-  // Initial load
-  updateExercises();
-});
-
 function fetchExercises(muscle, intensityLevel) {
-  const apiKey = 'YOUR_API_KEY'; // Replace this with your API key
-  const url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`;
+  const apiKey = '179562b284msh8b3cfccdbb3aef2p1844bejsn9578a4a06f6a';
+  const url = `https://exercisedb.p.rapidapi.com/exercises`;
 
   fetch(url, {
     method: 'GET',
     headers: {
-      'X-Api-Key': apiKey
+      'X-RapidAPI-Key': apiKey,
+      'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
     }
   })
     .then(res => {
@@ -41,16 +25,18 @@ function fetchExercises(muscle, intensityLevel) {
     })
     .then(data => {
       const container = document.getElementById("classes-container");
-      container.innerHTML = ''; // Clear old content
+      container.innerHTML = '';
 
-      // Optional: Simple mapping of difficulty to "intensity"
       const intensityMap = {
         low: ['beginner'],
         medium: ['intermediate'],
-        high: ['expert', 'advanced']
+        high: ['advanced']
       };
 
-      const filtered = data.filter(ex => intensityMap[intensityLevel].includes(ex.difficulty.toLowerCase()));
+      const filtered = data.filter(ex =>
+        (!muscle || ex.bodyPart.toLowerCase() === muscle.toLowerCase()) &&
+        (!intensityLevel || intensityMap[intensityLevel].includes(ex.difficulty?.toLowerCase()))
+      );
 
       if (filtered.length === 0) {
         container.innerHTML = `<p class="text-red-500 col-span-3 text-center">No exercises found for this combination.</p>`;
@@ -63,10 +49,10 @@ function fetchExercises(muscle, intensityLevel) {
 
         card.innerHTML = `
           <h4 class="text-xl font-bold mb-2 text-red-600">${exercise.name}</h4>
-          <p><strong>Muscle:</strong> ${exercise.muscle}</p>
-          <p><strong>Type:</strong> ${exercise.type}</p>
+          <p><strong>Body Part:</strong> ${exercise.bodyPart}</p>
+          <p><strong>Target:</strong> ${exercise.target}</p>
           <p><strong>Equipment:</strong> ${exercise.equipment}</p>
-          <p><strong>Difficulty:</strong> ${exercise.difficulty}</p>
+          <p><strong>Difficulty:</strong> ${exercise.difficulty ?? 'N/A'}</p>
         `;
 
         container.appendChild(card);
@@ -77,6 +63,7 @@ function fetchExercises(muscle, intensityLevel) {
       document.getElementById("classes-container").innerHTML = `<p class="text-red-500">Unable to load data. Please try again later.</p>`;
     });
 }
+
 
 
 function onSubmit(event) {

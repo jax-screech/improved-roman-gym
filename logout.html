@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logging Out...</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-900 text-white">
+
+  <div class="text-center">
+    <i class="fa-solid fa-right-from-bracket text-6xl text-red-500 mb-6 animate-pulse"></i>
+    <h1 class="text-2xl font-bold mb-4">Logging you out...</h1>
+    <p class="text-sm text-gray-300">Please wait, redirecting to homepage.</p>
+  </div>
+
+  <script>
+    // Clear login status
+    localStorage.removeItem("loggedIn");
+
+    // Optional: add a small delay before redirect
+    setTimeout(() => {
+      window.location.href = "initial.html"; // Redirect to the initial page
+    }, 2000);
+  </script>
+
+</body>
+</html>
