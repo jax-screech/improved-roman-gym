@@ -8,62 +8,67 @@ if (mobileMenuBtn) {
   });
 }
 
-function fetchExercises(muscle, intensityLevel) {
-  const apiKey = '179562b284msh8b3cfccdbb3aef2p1844bejsn9578a4a06f6a';
-  const url = `https://exercisedb.p.rapidapi.com/exercises`;
+async function fetchAndDisplayExercises() {
+  const container = document.getElementById('classes-list');
+  container.innerHTML = 'Loading...';
 
-  fetch(url, {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': apiKey,
-      'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-    }
-  })
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to fetch data");
-      return res.json();
-    })
-    .then(data => {
-      const container = document.getElementById("classes-container");
-      container.innerHTML = '';
+  try {
+    // Fetch exercises and images in parallel
+    const [exerciseRes, imageRes] = await Promise.all([
 
-      const intensityMap = {
-        low: ['beginner'],
-        medium: ['intermediate'],
-        high: ['advanced']
-      };
+      fetch('https://wger.de/api/v2/exercise/?language=2&limit=12'),
+      fetch('https://wger.de/api/v2/exerciseimage/')
+    ]);
 
-      const filtered = data.filter(ex =>
-        (!muscle || ex.bodyPart.toLowerCase() === muscle.toLowerCase()) &&
-        (!intensityLevel || intensityMap[intensityLevel].includes(ex.difficulty?.toLowerCase()))
-      );
+    const exerciseData = await exerciseRes.json();
+    const imageData = await imageRes.json();
 
-      if (filtered.length === 0) {
-        container.innerHTML = `<p class="text-red-500 col-span-3 text-center">No exercises found for this combination.</p>`;
-        return;
-      }
+    const exercises = exerciseData.results;
+    const images = imageData.results;
 
-      filtered.slice(0, 9).forEach(exercise => {
-        const card = document.createElement("div");
-        card.className = "bg-white p-6 rounded shadow hover:shadow-lg transition";
+    container.innerHTML = ''; // Clear loading state
 
-        card.innerHTML = `
-          <h4 class="text-xl font-bold mb-2 text-red-600">${exercise.name}</h4>
-          <p><strong>Body Part:</strong> ${exercise.bodyPart}</p>
-          <p><strong>Target:</strong> ${exercise.target}</p>
-          <p><strong>Equipment:</strong> ${exercise.equipment}</p>
-          <p><strong>Difficulty:</strong> ${exercise.difficulty ?? 'N/A'}</p>
-        `;
+    exercises.forEach(exercise => {
+      const matchedImage = images.find(img => img.exercise === exercise.id);
 
-        container.appendChild(card);
-      });
-    })
-    .catch(err => {
-      console.error(err);
-      document.getElementById("classes-container").innerHTML = `<p class="text-red-500">Unable to load data. Please try again later.</p>`;
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center';
+
+      card.innerHTML = `
+        ${matchedImage ? `<img src="${matchedImage.image}" alt="${exercise.name}" class="w-full h-48 object-cover rounded mb-4">` : ''}
+        <h4 class="text-xl font-semibold mb-2">${exercise.name}</h4>
+        <p class="text-gray-600 mb-4 text-sm">${exercise.description || 'No description available.'}</p>
+        <button class="bg-white text-red-500 px-4 py-2 rounded hover:bg-red-500 border border-red-500 hover:text-white">Join Now</button>
+      `;
+
+      container.appendChild(card);
     });
+
+  } catch (error) {
+    console.error('Error loading exercises:', error);
+    container.innerHTML = `<p class="text-red-500">Oops! Failed to load exercises. Try again later.</p>`;
+  }
 }
 
+document.addEventListener('DOMContentLoaded', fetchAndDisplayExercises);
+const filterBtn = document.getElementById('applyFiltersBtn');
+const filterInput = document.getElementById('filterInput');
+
+if (filterBtn && filterInput) {
+  filterBtn.addEventListener('click', () => {
+    const filterText = filterInput.value.toLowerCase();
+    const exerciseCards = document.querySelectorAll('#classes-list > div');
+
+    exerciseCards.forEach(card => {
+      const exerciseName = card.querySelector('h4').textContent.toLowerCase();
+      if (exerciseName.includes(filterText)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+}
 
 
 function onSubmit(event) {

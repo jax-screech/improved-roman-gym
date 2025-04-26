@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>The-Roman-Gym | About</title>
+    <title>The-Roman-Gym | About(not loggedIn)</title>
 </head>
 
 <body>
@@ -23,7 +23,8 @@
     <li class="relative group">
       <button class="rounded-full h-8 w-8 border-2 border-yellow-900"><i class="fa-solid fa-user text-white"></i></button>
     <ul class="absolute hidden group-hover:block bg-black text-red-500 mt-2 py-2 w-40 rounded shadow-lg z-10 right-0 top-0">
-      <li><a href="logout.html" class="block px-4 py-2 hover:bg-red-500 hover:text-white">Logout</a></li>
+        <li><a href="signin.html" class="block px-4 py-2 hover:bg-red-500 hover:text-white">login</a></li>
+        <li><a href="signup.html" class="block px-4 py-2 hover:bg-red-500 hover:text-white">signup</a></li>
     </ul>
     </li>
     </ul>
@@ -130,5 +131,22 @@
         </div>
       </footer>
     <script type="text/javascript" src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filters = document.querySelectorAll('#muscleFilter, #intensityFilter, #durationFilter, #equipmentFilter, #levelFilter');
+        const isLoggedIn = false; // Replace with actual logic to check if the user is logged in
+
+        if (!isLoggedIn) {
+            filters.forEach(filter => {
+                filter.disabled = true;
+                filter.title = "You must be logged in to use this filter.";
+            });
+
+            const clearButton = document.querySelector('.bg-red-600');
+            clearButton.disabled = true;
+            clearButton.title = "You must be logged in to clear filters.";
+        }
+    });
+    </script>
 </body>
 </html>
